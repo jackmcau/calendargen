@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<head>
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./template.css">
+</head>
+<body>
+    <input type="file" id="fileInput">
+    <div class="leftcol" id="leftcol" style="display:none">
+        <div class="topleft">
+            <h2 style="margin-bottom:10px; font-size:40px;" id="month">{month}</h2>
+            <p style="margin:0px;" id="year">{year}</p>
+            <hr>
+            <p style="font-weight: bold; padding-bottom:0px;">Notes/Goals:</p>
+            <div class="notes">
+                <list>
+                    <li>Note</li>
+                </list>
+            </div>
+        </div>
+        <div class="bottomleft">
+            <hr style="margin:0px">
+            <p style="font-weight:bold; margin-top:10px">Event Type</p>
+            <div class="key-container">
+                <div class="key-row">
+                    <div class="key-item" style="background-color:aqua; color:white;">
+                        Social Media
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightcol" id="rightcol" style="display:none">
+        <div>
+            <h1>MONTHLY OVERVIEW</h1>
+        </div>
+        <div class="calendar">
+            <div class="calendar-row" style="height:30px">
+                <div class="calendar-item">
+                    <p>SUN</p>
+                </div>
+                <div class="calendar-item">
+                    <p>MON</p>
+                </div>
+                <div class="calendar-item">
+                    <p>TUE</p>
+                </div>
+                <div class="calendar-item">
+                    <p>WED</p>
+                </div>
+                <div class="calendar-item">
+                    <p>THU</p>
+                </div>
+                <div class="calendar-item">
+                    <p>FRI</p>
+                </div>
+                <div class="calendar-item">
+                    <p>SAT</p>
+                </div>
+            </div>
+            <div class="calendar-row" id="calrow1">
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+            </div>
+            <div class="calendar-row" id="calrow2">
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                    <div class="day-item" style="background-color:orangered;">
+                        Bay Area Trip
+                    </div>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+            </div>
+            <div class="calendar-row" id="calrow3">
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+            </div>
+            <div class="calendar-row" id="calrow4">
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+            </div>
+            <div class="calendar-row" id="calrow5">
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                    <p class="day"></p>
+                </div>
+            </div>
+            <div class="calendar-row" style="height:0px">
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+                <div class="calendar-item">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>

@@ -1,0 +1,48 @@
+{
+    "data": {
+        "year": "2025",
+        "month": "October",
+        "day": "27",
+        "notes": [
+            "Note"
+        ],
+        "keys": {
+            "Media": {
+                "bg": "aqua",
+                "textcolor": "white"
+            },
+            "Website": {
+                "bg": "darkblue",
+                "textcolor": "white"
+            },
+            "Email": {
+                "bg": "green",
+                "textcolor": "black"
+            },
+            "Draft": {
+                "bg": "blueviolet",
+                "textcolor": "black"
+            },
+            "Misc": {
+                "bg": "gold",
+                "textcolor": "black"
+            },
+            "ORANGE RED": {
+                "bg": "orangered",
+                "textcolor": "black"
+            }
+        },
+        "events": [
+            {
+                "day": "15",
+                "key": "Email",
+                "text": "Meeting"
+            },
+            {
+                "day": "31",
+                "key": "Misc",
+                "text": "Halloween"
+            }
+        ]
+    }
+}
