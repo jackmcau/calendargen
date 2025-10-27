@@ -63,6 +63,7 @@ function parseJSON(json) {
     /*
         Filling in days of the month
     */
+
     monthAsInt = parseMonth(json.data.month)
     date = new Date(Date.UTC(parseInt(json.data.year), monthAsInt, parseInt(json.data.day)));
     daysInMonth = getDaysInMonth(parseInt(json.data.year), monthAsInt);
@@ -82,17 +83,58 @@ function parseJSON(json) {
         if(i < firstDayOfMonth) {
             children[i].innerHTML = `<hr><p class="day inactive">${getIntAsString(daysInPastMonth-(firstDayOfMonth-i)+1)}</p>`;
         } else if (i <= parseInt(json.data.day) + firstDayOfMonth - 1) {
-            children[i].innerHTML = `<hr><p class="day" id="${i-firstDayOfMonth+1}">${getIntAsString(i-firstDayOfMonth+1)}</p>`;
+            children[i].id = `${i-firstDayOfMonth+1}`;
+            children[i].innerHTML = `<hr><p class="day">${getIntAsString(i-firstDayOfMonth+1)}</p>`;
         } else if (i < daysInMonth + firstDayOfMonth) {
-            children[i].innerHTML = `<hr><p class="day future" id="${i-firstDayOfMonth+1}">${getIntAsString(i-firstDayOfMonth+1)}</p>`;
+            children[i].id = `${i-firstDayOfMonth+1}`;
+            children[i].innerHTML = `<hr><p class="day future">${getIntAsString(i-firstDayOfMonth+1)}</p>`;
         } else {
             children[i].innerHTML = `<hr><p class="day inactive">${getIntAsString(i-daysInMonth-firstDayOfMonth+1)}</p>`;
         }
     }
 
     /*
+        Notes
+    */
+
+    notesContainer = document.getElementById("notes");
+    for(let i = 0; i < json.data.notes.length; i++) {
+        notes.innerHTML += `<li>${json.data.notes[i]}</li>`;
+    }
+
+    /*
         Filling in keys
     */
 
-    
+    keyContainer = document.getElementById("keys");
+    keysList = Object.keys(json.data.keys);
+    let currentRow = null;
+    for(let i = 0; i < keysList.length; i++) {
+        newKey = document.createElement("div");
+        newKey.classList.add("key-item")
+        newKey.style.backgroundColor = json.data.keys[keysList[i]].bg;
+        newKey.style.color = json.data.keys[keysList[i]].textcolor;
+        newKey.innerHTML = `${keysList[i]}`;
+        if(i % 2 == 0) {
+            currentRow = document.createElement("div");
+            currentRow.classList.add("key-row");
+            keyContainer.appendChild(currentRow);
+        }
+        currentRow.appendChild(newKey);
+    }
+
+    /*
+        Events
+    */
+
+    /* 
+    <div class="day-item" style="background-color:orangered;">
+        Bay Area Trip
+    </div>
+    */
+
+    const events = json.data.events;
+    for(let i = 0; i < events.length; i++) {
+        document.getElementById(events[i].day).innerHTML += `<div class="day-item" style="background-color:${json.data.keys[events[i].key].bg};">${events[i].text}</div>`;
+    }
 }

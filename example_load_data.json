@@ -4,7 +4,8 @@
         "month": "October",
         "day": "27",
         "notes": [
-            "Note"
+            "Note one",
+            "Hello world"
         ],
         "keys": {
             "Media": {
